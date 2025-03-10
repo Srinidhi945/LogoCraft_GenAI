@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Logo Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Logo Generator</h1>
+        <form id="logoForm">
+            <input type="text" id="prompt" placeholder="Enter prompt for logo..." required>
+            <button type="submit">Generate Logos</button>
+        </form>
+        <div id="loading" style="display:none;">Generating logos, please wait...</div>
+        <div id="logos"></div>
+        <button id="downloadPDF" style="display:none;">Download All Logos as PDF</button>
+    </div>
+
+    <script>
+        document.getElementById("logoForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const prompt = document.getElementById("prompt").value.trim();
+            if (!prompt) return alert("Please enter a prompt!");
+
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("logos").innerHTML = "";
+            document.getElementById("downloadPDF").style.display = "none";
+
+            try {
+                const response = await fetch("/generate-logo", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt })
+                });
+
+                const result = await response.json();
+                document.getElementById("loading").style.display = "none";
+
+                if (response.ok) {
+                    displayLogos(result.image_files);
+                    document.getElementById("downloadPDF").style.display = "inline-block";
+                } else {
+                    alert(result.error || "Failed to generate logos!");
+                }
+            } catch (error) {
+                document.getElementById("loading").style.display = "none";
+                alert("Error generating logos: " + error.message);
+            }
+        });
+
+        // ✅ This function displays the logos dynamically
+        function displayLogos(imageFiles) {
+            const logosDiv = document.getElementById("logos");
+            logosDiv.innerHTML = ""; // Clear previous logos
+
+            imageFiles.forEach(fileName => {
+                const img = document.createElement("img");
+                img.src = `/download-logo/${fileName}`;
+                img.alt = "Generated Logo";
+                img.style.width = "250px";
+                img.style.margin = "10px";
+                logosDiv.appendChild(img);
+            });
+        }
+
+        // ✅ Download all logos as a PDF
+        document.getElementById("downloadPDF").addEventListener("click", function () {
+            window.location.href = "/download-logo-pdf";
+        });
+    </script>
+</body>
+
+</html>
