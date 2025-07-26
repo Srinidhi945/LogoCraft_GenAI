@@ -1,0 +1,264 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: black; /* Main black background */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Padding around the main container */
+}
+
+/* Main Container Styling */
+.app-container {
+  width: 100%;
+  max-width: 48rem; /* Equivalent to max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1f2937; /* Equivalent to bg-gray-900 */
+  padding: 2.5rem; /* Equivalent to p-10 */
+  border-radius: 1.5rem; /* Equivalent to rounded-3xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5); /* Equivalent to shadow-2xl, darker */
+  color: white;
+}
+
+/* Heading Styling */
+.app-title {
+  font-size: 3rem; /* Equivalent to text-5xl */
+  font-weight: 800; /* Equivalent to font-extrabold */
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+}
+
+.app-subtitle {
+  text-align: center;
+  color: #9ca3af; /* Equivalent to text-gray-400 */
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.purple-accent {
+  color: #a78bfa; /* Equivalent to text-purple-400 */
+}
+
+/* Step Indicator Styling */
+.step-indicator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+  gap: 1rem; /* Equivalent to space-x-4 */
+}
+
+.step-circle {
+  width: 2.5rem; /* Equivalent to w-10 */
+  height: 2.5rem; /* Equivalent to h-10 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  font-weight: 700; /* Equivalent to font-bold */
+  background-color: #4b5563; /* Equivalent to bg-gray-700 */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.step-circle.active {
+  background-color: #9333ea; /* Equivalent to bg-purple-600 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+}
+
+.step-connector {
+  height: 0.25rem; /* Equivalent to h-1 */
+  width: 3rem; /* Equivalent to w-12 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  background-color: #4b5563; /* Equivalent to bg-gray-700 */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.step-connector.active {
+  background-color: #a78bfa; /* Equivalent to bg-purple-400 */
+}
+
+/* Input Form Styling */
+.input-section {
+  /* Using padding and specific margins within this section instead of global space-y-8 */
+  padding-bottom: 2.5rem; 
+}
+
+.input-section > div { /* Apply margin to direct children of input-section for consistent spacing */
+    margin-bottom: 2rem; /* Equivalent to space-y-8, applied between input groups */
+}
+
+.input-section > div:last-child {
+    margin-bottom: 0; /* Remove margin from the last child to prevent double spacing with step buttons */
+}
+
+
+.input-label {
+  display: block;
+  color: #d1d5db; /* Equivalent to text-gray-300 */
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  font-weight: 500; /* Equivalent to font-medium */
+  margin-bottom: 0.75rem; /* Equivalent to mb-3 */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem; /* Equivalent to p-3 */
+  border: 1px solid #4b5563; /* Equivalent to border-gray-600 */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  outline: none;
+  background-color: #1f2937; /* Equivalent to bg-gray-800 */
+  color: white;
+  font-size: 1rem;
+}
+
+.input-field::placeholder {
+  color: #6b7280; /* Equivalent to placeholder-gray-500 */
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 2px #a78bfa; /* Equivalent to focus:ring-2 focus:ring-purple-500 */
+  border-color: #a78bfa; /* Optional: make border match ring color */
+}
+
+/* Styling for Select (Dropdown) */
+.select-field {
+    /* Inherits .input-field styles */
+    -webkit-appearance: none; /* Remove default browser styling */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%236b7280%22%20d%3D%22M287%20197.3l-133-133c-5.4-5.4-14.2-5.4-19.6%200l-133%20133c-5.4%205.4-5.4%2014.2%200%2019.6s14.2%205.4%2019.6%200L146.2%2085.8l123.6%20123.6c5.4%205.4%2014.2%205.4%2019.6%200S292.4%20202.7%20287%20197.3z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.75em;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+
+/* Button Styling */
+.button-base {
+  padding: 0.75rem 1.5rem; /* Equivalent to px-6 py-3 */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  font-weight: 600; /* Equivalent to font-semibold */
+  color: white;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Added opacity for disabled state */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+  cursor: pointer; /* Ensure pointer on hover for all buttons */
+}
+
+.button-base:hover:not(:disabled) { /* Apply hover only if not disabled */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2); /* Equivalent to hover:shadow-lg */
+}
+
+.button-primary {
+  background-color: #9333ea; /* Equivalent to bg-purple-600 */
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #7e22ce; /* Equivalent to hover:bg-purple-700 */
+}
+
+.button-secondary {
+  background-color: #374151; /* Equivalent to bg-gray-700 */
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #4b5563; /* Equivalent to hover:bg-gray-600 */
+}
+
+.button-base:disabled {
+  background-color: #6b7280; /* Equivalent to bg-gray-500 */
+  cursor: not-allowed;
+  opacity: 0.7; /* Indicate disabled state */
+  box-shadow: none; /* Remove shadow when disabled */
+}
+
+.button-full-width {
+  width: 100%;
+}
+
+.button-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flex utilities */
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.items-center { align-items: center; }
+.ml-auto { margin-left: auto; }
+.mt-4 { margin-top: 1rem; } /* Added for custom style input */
+.space-x-4 > *:not(:first-child) { margin-left: 1rem; } /* gap-4 */
+/* Removed global space-y-8 as it's now handled by .input-section > div */
+
+
+/* Grid Layout for Logos */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* col-1 */
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* sm:grid-cols-2 */
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* lg:grid-cols-2 (already 2, but for clarity) */
+  }
+}
+
+.logo-card {
+  background-color: #374151; /* bg-gray-800 */
+  border: 1px solid #4b5563; /* border-gray-700 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  padding: 1.5rem; /* p-6 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-card:hover {
+  transform: scale(1.02); /* Slightly less aggressive hover scale */
+}
+
+.logo-image {
+  width: 100%;
+  height: 256px; /* Fixed height for consistent grid */
+  object-fit: contain; /* Ensures image fits without distortion */
+  border-radius: 0.375rem; /* rounded-md */
+  margin-bottom: 1.5rem; /* mb-6 */
+  border: 1px solid #4b5563; /* border-gray-600 */
+  padding: 0.5rem; /* p-2 */
+  background-color: #111827; /* bg-gray-900 */
+}
+
+/* Animations (Moved from App.js) */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

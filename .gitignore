@@ -1,0 +1,5 @@
+ackend/venv/
+backend/.env
+frontend_new/node_modules/
+frontend_new/build/
+frontend_new/.git/ 
