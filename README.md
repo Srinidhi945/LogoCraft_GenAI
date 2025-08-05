@@ -1,4 +1,4 @@
-# LogocraftGenAI - AI-Powered Logo Generation✨
+## LogocraftGenAI - AI-Powered Logo Generation✨
 
 Logocraft is a generative AI application that empowers users to create unique, professional logos in seconds. By providing simple inputs like brand name, colors, and style, Logocraft intelligently crafts detailed prompts for a state-of-the-art text-to-image model to generate stunning logo variations.
 
@@ -52,18 +52,18 @@ The application follows a simple but powerful data flow from user idea to final 
 
 Follow these steps sequentially to get the project running locally.
 
-### Prerequisites
+# Prerequisites
 * Python
 * Node.js and npm (or yarn)
 * Git
 * A Hugging Face account and API Token
 
-### Step 1: Clone the Repository
+# Step 1: Clone the Repository
 
 git clone [https://github.com/Srinidhi945/LogoCraft_GenAI.git](https://github.com/Srinidhi945/LogoCraft_GenAI.git)
 cd LogoCraft_GenAI
 
-### Step 2: Set Up Python Environment and Dependencies
+## Step 2: Set Up Python Environment and Dependencies
 This installs the necessary packages for the Flask backend.
 
 # Navigate to the backend directory
