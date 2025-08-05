@@ -52,30 +52,31 @@ The application follows a simple but powerful data flow from user idea to final 
 
 Follow these steps sequentially to get the project running locally.
 
-# Prerequisites
+>Prerequisites
 * Python
 * Node.js and npm (or yarn)
 * Git
 * A Hugging Face account and API Token
 
-# Step 1: Clone the Repository
+>Step 1: Clone the Repository
 
 git clone [https://github.com/Srinidhi945/LogoCraft_GenAI.git](https://github.com/Srinidhi945/LogoCraft_GenAI.git)
 cd LogoCraft_GenAI
 
-## Step 2: Set Up Python Environment and Dependencies
+>Step 2: Set Up Python Environment and Dependencies
 This installs the necessary packages for the Flask backend.
 
-# Navigate to the backend directory
+ >Navigate to the backend directory
 cd backend
 
-# Create and activate a virtual environment
+ >Create and activate a virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install Python dependencies
+>Install Python dependencies
 pip install -r requirements.txt
-Step 3: Configure API Keys
+
+>Step 3: Configure API Keys
 You need to provide your Hugging Face API key for the AI model to work.
 
 While still in the /backend directory, create a new file named .env.
@@ -84,14 +85,16 @@ Open the .env file and add your token in the following format:
 HUGGING_FACE_API_TOKEN="hf_YourSecretTokenHere"
 Important: The .gitignore file should already be configured to ignore .env, but always ensure your keys are not committed to Git.
 
-Step 4: Set Up Node Environment
+>Step 4: Set Up Node Environment
 This installs the packages for the React frontend. Open a new terminal window and navigate to the project's root directory again.
-# In your new terminal, navigate to the frontend directory
+
+>In your new terminal, navigate to the frontend directory
 cd path/to/your/LogoCraft_GenAI/frontend
 
-# Install Node.js dependencies
+>Install Node.js dependencies
 npm install
-Step 5: Run the Application
+
+>Step 5: Run the Application
 You need to have both terminals open to run the full application.
 
 In your first terminal (for the Backend):
@@ -104,7 +107,7 @@ In your second terminal (for the Frontend):
 npm start
 The frontend development server will start and should open a new browser tab.
 
-Step 6: View the App
+>Step 6: View the App
 Open your web browser and navigate to http://localhost:3000 to use Logocraft.
 ---
 
