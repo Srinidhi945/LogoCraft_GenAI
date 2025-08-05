@@ -59,13 +59,12 @@ Follow these steps sequentially to get the project running locally.
 * A Hugging Face account and API Token
 
 ### Step 1: Clone the Repository
-```sh
+
 git clone [https://github.com/Srinidhi945/LogoCraft_GenAI.git](https://github.com/Srinidhi945/LogoCraft_GenAI.git)
 cd LogoCraft_GenAI
-Step 2: Set Up Python Environment and Dependencies
-This installs the necessary packages for the Flask backend.
 
-Bash
+### Step 2: Set Up Python Environment and Dependencies
+This installs the necessary packages for the Flask backend.
 
 # Navigate to the backend directory
 cd backend
